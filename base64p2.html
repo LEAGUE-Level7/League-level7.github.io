@@ -3,7 +3,10 @@ Typically in a base64 string, every four characters will represent 3 bytes. Sinc
 4 * 6 = 24
 3 * 8 = 24
 
-Your mission, is to write a method that takes in a 4 letter string and return a byte array of the translated data. See the example below:
+Your mission, is to write a couple of methods to decode a base64 string. The first method will convert a char to the matching 
+base64 number. It will take in a char and return the number as a single byte.
+
+The second method takes in a 4 letter string and returns a byte array of the translated data. See the example below:
 
 byte[] base64ToByteArray(String str){
 	byte[] decodedByes = new byte[3];
