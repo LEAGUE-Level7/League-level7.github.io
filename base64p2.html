@@ -1,0 +1,35 @@
+<p>
+Typically in a base64 string, every four characters will represent 3 bytes. Since each base64 char represents a 6 bit number and each byte is 8 bits:
+4 * 6 = 24
+3 * 8 = 24
+
+Your mission, is to write a method that takes in a 4 letter string and return a byte array of the translated data. See the example below:
+
+byte[] base64ToByteArray(String str){
+	byte[] decodedByes = new byte[3];
+
+//code to convert str to byte array
+
+	return decodedBytes;
+}
+
+…
+
+byte[] data = base64ToByteArray("AAAA");
+
+data:
+[0, 0, 0]
+
+…
+
+byte data = base64ToByteArray("////");
+
+data:
+[255, 255, 255]
+
+
+You can use the JUnit Test to check your method.
+
+</p>
+
+<a href="https://League-level7.github.io/base64p3">Continue to part 3.</a>
