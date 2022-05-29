@@ -42,6 +42,35 @@
 
             <div class="module">
                 <div class="titleBar">
+                    <h3>One small change for the Spring Application</h3>
+                </div>
+                <div class="description">
+                    <p>
+                       The way that this project and most major web applications are structured, is such that the backend and frontend are
+                        discrete applications.  In order for our Spring application to accept requests from a different application, we need to enable CORS support.
+                        This is the case whether we have production applications running on entirely different instances, or even just when we run these applications
+                        locally but on different ports.  Cross Origin Resource Sharing (CORS) is a mechanism that allows applications to accept requests that
+                        from a different domain.  These requests are typically blocked, for security reasons.  As an example that ignores some other security best-practices,
+                        your computer might have a cookie saved in the browser that contains the login credentials for your bank account.  Someone could write some JavaScript
+                        on any website that grabs your cookies, logs into your bank account, and transfers all of your money to them.  However, as previously mentioned,
+                        this request would (hopefully) be blocked by the bank's CORS policy, as it is programmatic request from a domain that they don't own.  While they might have CORS
+                        enabled, it would only apply to domains which they own.   While Spring allows us to specify domains for which we would like to enable CORS, you can simplify things
+                        and just enable CORS in your controller classes by adding the following annotation above your Controller classes' class declaration.  If you wanted to
+                        specify which domains you would like to enable CORS support for, it would be simply a matter of adding parentheses that contain a domain String after the
+                        annotation.
+<pre>
+@RestController
+@CrossOrigin
+public class LocController{
+    //a bunch of code
+}</pre>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="module">
+                <div class="titleBar">
                     <h3>Clone the Template Repository and Create a Branch</h3>
                 </div>
                 <div class="description">
