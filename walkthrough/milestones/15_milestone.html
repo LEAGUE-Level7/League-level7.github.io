@@ -134,9 +134,9 @@ public class LocController{
                     <p>
                         Now all that is left is use the props that have been passed in the SearchResult component and
                     display them properly.  The starting on line 7 of SearchResult.js is essentially HTML, so if you are familiar with that, you can
-                    play with the style of the what is returned from the SearchResult to make it display exactly how you want.
+                    play with the style of what is returned from the SearchResult to make it display exactly how you want.
                     The Cheetah Search example is actually more complicated than most, as it returns a list of authors that
-                    are, in turned, mapped to an individual &ltp&gt tag:
+                    are, in turn, mapped to an individual &ltp&gt tag:
                     <pre>
 &ltarticle className={classes.Result}&gt
     &lth1&gtTitle: {props.title}&lt/h1&gt
@@ -186,6 +186,28 @@ public class LocController{
                         results relevant to that term.  After our long journey, we have seen not only how to create
                         a production-quality Spring application that provides users with data based on a specific query, but
                         now how we could display that information to a user with modern React application.
+                    </p>
+                </div>
+            </div>
+
+            <div class="module">
+                <div class="titleBar" style="background-color: lightskyblue">
+                    <h3>Oh no! My web page won't display any data :(</h3>
+                </div>
+                <div class="description">
+                    <p>
+                        If you have the frontend running, but when you submit a search nothing shows up, or it appears to load forever, there are only
+                        a few things that could be going wrong.  To find the cause, open up the JavaScript (or developer) console in your browser and submit
+                        your search again.  If you see a message being displayed that mentions CORS, revisit the first step of this section and update your
+                        Spring application accordingly.  If that doesn't seem to be the issue, open the "network" tab of the developer console and submit your
+                        search.  The request that is failing will likely show up in red.  Look at the status code for the request, and that will give you a good
+                        hint as to where the problem is occurring.  If the status code is in the 400 range, that means there is an issue with the request you are
+                        making from the frontend application.  Most likely, the URL and/or query parameters that you are attempting to submit are incorrect. If the
+                        status code is in the 500 range, that means there is an issue with the Spring application when it tries to complete the request.  If
+                        that is the case, you should see a stack trace being printed out by your Spring application that will give you a hint as to why it is
+                        failing.  If the request to the Spring application is succeeding, and you receive a 200 status code, then the issue lies with how you are
+                        handling the data once it is delivered to the frontend application.  Revisit the previous steps and confirm that you are properly displaying
+                        the data on your page.
                     </p>
                 </div>
             </div>
